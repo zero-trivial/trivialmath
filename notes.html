@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trivial Math - Notes</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-content">
+      <div class="branding"><a href="home.html">Trivial Math</a></div>
+      <nav id="mainNav" class="main-navigation">
+        <a href="home.html" class="nav-link">Home</a>
+        <a href="notes.html" class="nav-link">Notes</a>
+        <a href="about.html" class="nav-link">About</a>
+      
+      </nav>
+      <button id="menuToggle" class="mobile-menu-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+    <h1>Notes Library</h1>
+    <div class="search-bar-container">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search all notes...">
+    </div>
+
+    <!-- This container will be dynamically filled with categorized note sections by script.js -->
+    <div id="allNotesContainer"></div>
+  </main>
+
+  <!-- Reusable PDF Modal Component -->
+  <div id="pdfModal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close-button" onclick="closeModal()" aria-label="Close modal">&times;</button>
+      <div class="modal-toolbar">
+        <button onclick="zoomIn()" aria-label="Zoom In">+</button>
+        <button onclick="zoomOut()" aria-label="Zoom Out">-</button>
+      </div>
+      <iframe id="pdfViewer" class="pdf-iframe" title="PDF Preview"></iframe>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Trivial Math</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
