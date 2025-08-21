@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trivial Math - Home</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- MathJax for rendering mathematical equations -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body id="home-page">
+
+  <header class="site-header">
+    <div class="header-content">
+      <div class="branding"><a href="home.html">Trivial Math</a></div>
+      <nav id="mainNav" class="main-navigation">
+        <a href="home.html" class="nav-link">Home</a>
+        <a href="notes.html" class="nav-link">Notes</a>
+        <a href="about.html" class="nav-link">About</a>
+       
+      </nav>
+      <button id="menuToggle" class="mobile-menu-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+    <section class="welcome-section">
+      <h1>Welcome to Trivial Math</h1>
+      <p>This site is my personal study library where I share math notes and resources. The goal is to make complex topics feel <em>trivial</em> through structured learning.</p>
+    </section>
+
+    <!-- New Feature: Study Path Section -->
+    <section class="study-path-section">
+      <h2>Getting Started?</h2>
+      <div class="study-path-content">
+        <p>If you're new to these topics, here's a suggested path to follow:</p>
+        <ol class="study-path-list">
+          <li>Begin with the <strong><a href="#" onclick="previewPDF('notes_pdf/analysis_real.pdf')">Real Analysis Basics</a></strong> to build a solid foundation.</li>
+          <li>Explore vector spaces and matrices in our <strong><a href="#" onclick="previewPDF('notes_pdf/linear_algebra.pdf')">Linear Algebra</a></strong> notes.</li>
+          <li>Then, see how these concepts apply in our introduction to <strong><a href="#" onclick="previewPDF('notes_pdf/group_theory.pdf')">Group Theory</a></strong>.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- New Feature: Curated Spotlight Section -->
+    <section class="spotlight-notes">
+      <h2>Curated Spotlight</h2>
+      <div id="spotlightNotesContainer" class="note-grid">
+        <!-- Spotlight notes will be injected here by script.js -->
+      </div>
+    </section>
+
+    <!-- New Feature: Recently Added Section -->
+    <section class="latest-notes">
+      <h2>Recently Added</h2>
+      <div id="latestNotesContainer" class="note-grid">
+        <!-- The 3 newest notes will be injected here by script.js -->
+      </div>
+    </section>
+    
+    <div class="view-all-link-container">
+      <a href="notes.html" class="button-link">View All Notes →</a>
+    </div>
+  </main>
+
+  <!-- Reusable PDF Modal Component -->
+  <div id="pdfModal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close-button" onclick="closeModal()" aria-label="Close modal">&times;</button>
+      <div class="modal-toolbar">
+        <button onclick="zoomIn()" aria-label="Zoom In">+</button>
+        <button onclick="zoomOut()" aria-label="Zoom Out">-</button>
+      </div>
+      <iframe id="pdfViewer" class="pdf-iframe" title="PDF Preview"></iframe>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Trivial Math</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
