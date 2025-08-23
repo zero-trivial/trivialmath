@@ -5,31 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trivial Math - Home</title>
   <link rel="stylesheet" href="css/styles.css">
-  <!-- MathJax for rendering mathematical equations -->
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </head>
 <body id="home-page">
 
   <header class="site-header">
     <div class="header-content">
-      <div class="branding"><a href="index.html">Trivial Math</a></div>
+      <div class="branding"><a href="home.html">Trivial Math</a></div>
       <nav id="mainNav" class="main-navigation">
-        <a href="index.html" class="nav-link">Home</a>
+        <a href="home.html" class="nav-link">Home</a>
         <a href="notes.html" class="nav-link">Notes</a>
         <a href="about.html" class="nav-link">About</a>
-       
       </nav>
       <button id="menuToggle" class="mobile-menu-toggle" aria-label="Open menu">☰</button>
     </div>
   </header>
 
   <main class="content-wrapper">
+    <!-- ... page content ... -->
     <section class="welcome-section">
       <h1>Welcome to Trivial Math</h1>
       <p>This site is my personal study library where I share math notes and resources. The goal is to make complex topics feel <em>trivial</em> through structured learning.</p>
     </section>
-
-    <!-- New Feature: Study Path Section -->
     <section class="study-path-section">
       <h2>Getting Started?</h2>
       <div class="study-path-content">
@@ -41,23 +38,14 @@
         </ol>
       </div>
     </section>
-
-    <!-- New Feature: Curated Spotlight Section -->
     <section class="spotlight-notes">
       <h2>Curated Spotlight</h2>
-      <div id="spotlightNotesContainer" class="note-grid">
-        <!-- Spotlight notes will be injected here by script.js -->
-      </div>
+      <div id="spotlightNotesContainer" class="note-grid"></div>
     </section>
-
-    <!-- New Feature: Recently Added Section -->
     <section class="latest-notes">
       <h2>Recently Added</h2>
-      <div id="latestNotesContainer" class="note-grid">
-        <!-- The 3 newest notes will be injected here by script.js -->
-      </div>
+      <div id="latestNotesContainer" class="note-grid"></div>
     </section>
-    
     <div class="view-all-link-container">
       <a href="notes.html" class="button-link">View All Notes →</a>
     </div>
@@ -65,18 +53,20 @@
 
   <!-- Reusable PDF Modal Component -->
   <div id="pdfModal" class="modal-overlay">
-    <div class="modal-content">
+    <div class="modal-container">
       <button class="modal-close-button" onclick="closeModal()" aria-label="Close modal">&times;</button>
-      <div class="modal-toolbar">
-        <button onclick="zoomIn()" aria-label="Zoom In">+</button>
-        <button onclick="zoomOut()" aria-label="Zoom Out">-</button>
+      
+      <div class="modal-content">
+        <iframe id="pdfViewer" class="pdf-iframe" title="PDF Preview"></iframe>
       </div>
-      <iframe id="pdfViewer" class="pdf-iframe" title="PDF Preview"></iframe>
     </div>
   </div>
 
   <footer class="site-footer">
-    <p>&copy; 2025 Trivial Math</p>
+    <div class="footer-content">
+      <p>&copy; 2025 Trivial Math</p>
+      <p>All Rights Reserved</p>
+    </div>
   </footer>
 
   <script src="js/script.js"></script>
