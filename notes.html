@@ -10,12 +10,11 @@
 
   <header class="site-header">
     <div class="header-content">
-      <div class="branding"><a href="index.html">Trivial Math</a></div>
+      <div class="branding"><a href="home.html">Trivial Math</a></div>
       <nav id="mainNav" class="main-navigation">
-        <a href="index.html" class="nav-link">Home</a>
+        <a href="home.html" class="nav-link">Home</a>
         <a href="notes.html" class="nav-link">Notes</a>
         <a href="about.html" class="nav-link">About</a>
-      
       </nav>
       <button id="menuToggle" class="mobile-menu-toggle" aria-label="Open menu">☰</button>
     </div>
@@ -26,25 +25,28 @@
     <div class="search-bar-container">
       <input type="text" id="searchInput" class="search-input" placeholder="Search all notes...">
     </div>
-
-    <!-- This container will be dynamically filled with categorized note sections by script.js -->
     <div id="allNotesContainer"></div>
+    <div id="noResultsMessage" class="no-results-message"></div>
   </main>
 
   <!-- Reusable PDF Modal Component -->
   <div id="pdfModal" class="modal-overlay">
-    <div class="modal-content">
+ 
+    <div class="modal-container">
+     
       <button class="modal-close-button" onclick="closeModal()" aria-label="Close modal">&times;</button>
-      <div class="modal-toolbar">
-        <button onclick="zoomIn()" aria-label="Zoom In">+</button>
-        <button onclick="zoomOut()" aria-label="Zoom Out">-</button>
+      
+      <div class="modal-content">
+        <iframe id="pdfViewer" class="pdf-iframe" title="PDF Preview"></iframe>
       </div>
-      <iframe id="pdfViewer" class="pdf-iframe" title="PDF Preview"></iframe>
     </div>
   </div>
 
   <footer class="site-footer">
-    <p>&copy; 2025 Trivial Math</p>
+    <div class="footer-content">
+      <p>&copy; 2025 Trivial Math</p>
+      <p>All Rights Reserved</p>
+    </div>
   </footer>
 
   <script src="js/script.js"></script>
